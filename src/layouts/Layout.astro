@@ -1,0 +1,47 @@
+---
+import '../styles/global.scss';
+
+// SEO title, description and keywords
+const seoTitle          = 'Renzo Medina | Backend Developer & DevOps Jr';
+const seoDescription    = 'Passionate web developer focused on creating clean, efficient, and scalable web applications with a modern tech stack.';
+
+---
+
+<!doctype html>
+<html lang="en" class="bg-black text-gray-100 font-mono">
+
+    <head>
+
+        <!-- Crawler & Robots -->
+        <meta name="robots" content="index, follow, noodp, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="revisit-after" content="7 days" />
+        <meta name="revisit" content="after 7 days" />
+
+        <!-- Start: Meta-Tags -->
+        <meta charset="UTF-8" />
+        <meta http-equiv="content-type"         content="text/html; charset=UTF-8">
+        <meta http-equiv="Pragma"               content="cache" />
+        <meta http-equiv="X-UA-Compatible"      content="IE=edge">
+        <meta name="viewport"                   content="width=device-width, initial-scale=1">
+        <!-- End: Meta-Tags -->
+
+        <!-- Start: DNS prefetch and preconnect -->
+        <!-- <link rel="preload" as="image" href="/img/logo.svg" /> -->
+        <link rel="preconnect" href="https://brain.papersend.io" />
+        <!-- End: DNS prefetch and preconnect -->
+
+        <!-- Start: Theming and Favicons -->
+        <link rel="icon" type="image/svg+xml" crossorigin="anonymous" href="/img/logo.svg" />
+
+        <!-- Title & Description -->
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription}>
+        <meta name="abstract"    content={seoDescription}>
+
+    </head>
+
+    <body class="min-h-[100vh] flex items-center justify-center p-4">
+        <slot />
+    </body>
+
+</html>

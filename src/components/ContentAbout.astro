@@ -1,0 +1,111 @@
+---
+import { Code } from 'astro:components';
+
+const code = `type Developer struct {
+    Name      string
+    Skills    []string
+    Interests []string
+}
+
+type TechStack struct {
+    DevOps   []string
+    Backend  []string
+    Frontend []string
+}
+
+type ContactType string
+const (
+    GitHub   ContactType = "github"
+    Twitter  ContactType = "twitter"
+    LinkedIn ContactType = "linkedIn"
+    Email    ContactType = "email"
+)
+
+func Contact(t ContactType) string {
+    switch t {
+    case GitHub:
+        return "https://github.com/RenzoMedina"
+    case Twitter:
+        return "https://x.com/olayarenzo"
+    case LinkedIn:
+        return "https://www.linkedin.com/in/renzo-medina-olaya"
+    case Email:
+        return "renzo.medina.olaya@gmail.com"
+    default:
+        return "Send message"
+    }
+}
+func main() {
+    techStack := TechStack{
+        DevOps: []string{
+            "GitHub",
+            "Docker",
+            "GitHub Actions",
+        },
+        Backend: []string{
+            "Python",
+            "Go",
+            "PHP",
+            "MySQL",
+            "PostgreSQL",
+        },
+        Frontend: []string{
+            "Astro Js",
+            "Tailwind CSS",
+        },
+    }
+
+    // Define developer profile
+    me := Developer{
+        Name: "Renzo Medina",
+        Skills: append(
+            append(techStack.DevOps, techStack.Backend...),
+            techStack.Frontend...,
+        ),
+        Interests: []string{
+            "Sistemas escalables",
+            "Optimización de bases de datos",
+            "Automatización de DevOps",
+            "Diseño modular",
+            "Flujos de trabajo de CI/CD"
+        },
+    }
+
+    // Example usage
+    fmt.Println("Contact GitHub:", Contact(GitHub))
+    fmt.Println("Skills:", me.Skills)
+}
+
+`;
+---
+
+<Code
+    code={code}
+    lang="go"
+    wrap={true}
+/>
+
+<style is:global>
+
+    /* Custom styling for code block line numbers */
+    pre.astro-code {
+        @apply bg-transparent !important;
+    }
+
+    pre.astro-code code {
+        @apply block;
+        counter-reset: step;
+        counter-increment: step 0;
+    }
+
+    pre.astro-code code .line {
+        @apply relative;
+    }
+
+    pre.astro-code code .line::before {
+        content: counter(step);
+        counter-increment: step;
+        @apply text-gray-600 pr-2;
+    }
+
+</style>
