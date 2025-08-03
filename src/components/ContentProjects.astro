@@ -11,24 +11,32 @@ interface Project {
 };
 
 const projects: Project[] = [{
-    name: 'Papersend.io',
-    description: 'Papersend is the free alternative to DocSend for secure document sharing, tracking, and Data Rooms. Customize branding, control access, and protect your documents.',
+    name: 'Manager System API – Backend Modular en PHP',
+    description: 'Este backend forma parte de un sistema administrativo diseñado para gestionar recursos clínicos y administrativos. Desarrollado en PHP puro, con enfoque en buenas prácticas, modularidad y despliegue automatizado mediante Docker.',
     link: {
-        url: 'https://papersend.io/',
+        url: 'https://github.com/RenzoMedina/manage_system/tree/main/backend',
     }
 }, {
-    name: 'Qivi.io',
-    description: 'Qivi is an all-in-one application designed to streamline business operations, enhance productivity, and maximize success. Data security is a priority.',
+    name: 'API Fake User – Simulación de Usuarios en PHP',
+    description: 'Este proyecto es una API RESTful básica desarrollada en PHP, diseñada para simular usuarios falsos con datos realistas. Ideal para pruebas, demostraciones o entornos de desarrollo donde se requiere información ficticia pero estructurada.',
     link: {
-        url: 'https://qivi.io/'
+        url: 'https://github.com/RenzoMedina/ApiFakeUser'
     }
 }, {
-    name: 'TECHPOINT.de',
-    description: 'TECHPOINT is a local IT service provider based in the Starnberg district and the Fünfseenland region, specializing in delivering reliable and modern IT solutions.',
+    name: 'API V0.1 en Go con Echo y MySQL',
+    description: 'Este proyecto es una API RESTful desarrollada en Go utilizando el framework Echo y una base de datos MySQL, diseñada como una base modular para servicios web rápidos y escalables.',
     link: {
-        url: 'https://techpoint.de/'
+        url: 'https://github.com/RenzoMedina/api_v0.1_go'
     }
-}];
+},
+    {
+    name: 'Store Alberto – Sistema Básico de Almacén en PHP',
+    description: 'Este proyecto es una aplicación web básica para la gestión de almacenes, desarrollada en PHP con un enfoque modular y ligero. Está diseñada para cubrir operaciones esenciales de ventas, productos y reportes, ideal como base para sistemas administrativos más complejos.',
+    link: {
+        url: 'https://uat-store-alberto.rsmedina.site/'
+    }
+}
+];
 ---
 
 <div>
@@ -56,7 +64,7 @@ const projects: Project[] = [{
                             title={project.link.title || project.name}
                             target={project.link.target || '_blank'}
                             class="
-                                w-full px-4 py-2.5 mt-4 text-center
+                                w-full px-2 py-2.5 mt-4 text-center
 
                                 border border-gray-600 rounded-lg
 
